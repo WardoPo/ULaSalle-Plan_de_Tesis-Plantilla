@@ -8,21 +8,26 @@
 \usepackage{changepage}      
 \usepackage{enumitem}
 
+% Estilo de titulos
 \titleformat{\chapter}{\bfseries\centering\LARGE}{}{0pt}{}{}
 \titleformat{\section}{\bfseries}{}{0pt}{}{}
 \titleformat{\subsection}{\bfseries}{\hspace{0.63cm}\alph{subsection}. }{0pt}{}{}
 
-\setlist[itemize]{left=0.63cm .. 1.88cm}
-\setlist[enumerate]{left=0cm .. 1.25cm}
+% Estilos de Listas
+\setlist[itemize]{left=1.25cm .. 2.5cm}
+\setlist[enumerate]{left=0cm .. 1.25cm} %%Second Line Indentation to be revised
+
+\newcounter{descriptcount}
+\renewcommand*\thedescriptcount{\alph{descriptcount}}
+
+\setlist[description]{before={\setcounter{descriptcount}{0}},font=\normalfont\stepcounter{descriptcount}\thedescriptcount)\qquad\quad,leftmargin = 0cm}
 
 \setlength{\parindent}{0pt}
 
+% Ambientes
 \newenvironment{resumen}
 {
-    \begin{center}
-        \chapter*{Resumen}
-    \end{center}
-    \setlist[itemize]{left=0.63cm .. 1.88cm}
+    \chapter{Resumen}
 }
 {}
 
