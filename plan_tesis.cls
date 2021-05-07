@@ -22,6 +22,10 @@
 
 \setlist[description]{before={\setcounter{descriptcount}{0}},font=\normalfont\stepcounter{descriptcount}\thedescriptcount)\qquad\quad,leftmargin = 0cm}
 
+\renewcommand{\descriptionlabel}[1]{%
+  \hspace\labelsep \upshape\bfseries #1:%
+}
+
 \setlength{\parindent}{0pt}
 
 % Ambientes
@@ -40,6 +44,7 @@
 }
 {
     \end{adjustwidth}
+    \addtolength{\textwidth}{1.25cm}
 }
 
 \addto{\captionsenglish}{\renewcommand{\bibname}{References}}
